@@ -85,7 +85,7 @@
         <el-form-item label="活动官网">
           <el-input v-model="pojo.internetUrl" placeholder="活动官网"></el-input>
         </el-form-item>
-        <el-form-item label="主办方">
+        <el-form-item label="举办地点">
           <el-input v-model="pojo.address" placeholder="举办地点"></el-input>
         </el-form-item>
         <el-form-item label="主办方">
