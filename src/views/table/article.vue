@@ -191,7 +191,7 @@
                                 articleId,
                                 categoryName,
                                 articleStateDetail,
-                                createDate: BasicTypeUtil.formateDate(createDate)
+                                createDate: createDate
                             })
                         }
                         this.info.rows = dataList
