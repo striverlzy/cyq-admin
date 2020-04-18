@@ -158,7 +158,6 @@
                     internetUrl: '',
                     sponsor: '',
                     title: '',
-                    articleState: '',
                     state: '',
                     page: this.currentPage,
                     size: this.pageSize
@@ -279,7 +278,7 @@
                     sponsor: '',
                     isHost: '',
                     title: '',
-                    articleState: '',
+                    state: '',
                     page: this.currentPage,
                     size: this.pageSize
                 }
@@ -301,6 +300,7 @@
                     sponsor: this.params.sponsor || '',
                     title: this.params.title || '',
                     isHost: this.params.isHost || '',
+                    state: this.params.state,
                     page: this.currentPage,
                     size: this.pageSize
                 }

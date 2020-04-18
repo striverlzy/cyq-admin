@@ -75,7 +75,7 @@
     <el-dialog title="文章预览" :visible.sync="dialogFormVisible">
       <span v-if="!isHandleShow">{{pojo.title}}</span>
 
-      <p v-html="pojo.content"></p>
+      <div v-html="pojo.content" class="show_img"></div>
       <el-button v-if="!isHandleShow" type="success" @click="handleOkChenk(pojo.articleId)">通过</el-button>
       <el-button v-if="!isHandleShow" type="danger" @click="handleUnChenk(pojo.articleId)">不通过</el-button>
       <el-button v-if="!isHandleShow" @click="dialogFormVisible = false">关闭</el-button>
@@ -276,3 +276,16 @@
         }
     }
 </script>
+
+<style lang="less" scoped>
+  .show_img{
+    /deep/ p{
+      /deep/ img{
+        width: 100%;
+      }
+    }
+
+
+  }
+
+</style>
