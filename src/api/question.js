@@ -15,6 +15,10 @@ export function getQuestion(params = {
   return Request.post(baseUrl + '/question/search', params)
 }
 
+export function countQuestion() {
+  return Request.get(baseUrl + '/count')
+}
+
 // 删除问答
 export function deleteQuestion(questionId) {
   return Request.get(baseUrl + '/delete?questionId=' + questionId)

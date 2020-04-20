@@ -12,6 +12,11 @@ export function lockUser(userId) {
   return Request.get(baseUrl + '/lock?userId=' + userId)
 }
 
+
+export function countUser() {
+  return Request.get(baseUrl + '/count')
+}
+
 // 解封
 export function unlockUser(userId) {
   return Request.get(baseUrl + '/unlock?userId=' + userId)

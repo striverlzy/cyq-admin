@@ -2,10 +2,21 @@
   <el-menu class="navbar" mode="horizontal">
     <hamburger :toggle-click="toggleSideBar" :is-active="sidebar.opened" class="hamburger-container"/>
     <breadcrumb class="breadcrumb-container"/>
+
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
-        <img class="user-avatar" src="../../../assets/averter.png">
-        <i class="el-icon-caret-bottom"></i>
+        <table>
+          <tr>
+            <td>
+            </td>
+            <td>
+              <i  class="el-icon-bell"/>
+              <img  class="user-avatar" src="http://cyq-test.oss-cn-beijing.aliyuncs.com/tx.jpg">
+              <i class="el-icon-caret-bottom"></i>
+            </td>
+          </tr>
+        </table>
+
       </div>
       <el-dropdown-menu slot="dropdown" class="user-dropdown">
 <!--        <router-link class="inlineBlock" to="/">-->
@@ -83,7 +94,7 @@
         .user-avatar {
           width: 40px;
           height: 40px;
-          border-radius: 10px;
+          border-radius: 20px;
         }
         .el-icon-caret-bottom {
           position: absolute;

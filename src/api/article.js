@@ -7,6 +7,10 @@ export function getArticle(params) {
   return Request.post(baseUrl + '/article/search', params)
 }
 
+export function countArticle() {
+  return Request.get(baseUrl + '/count/article')
+}
+
 // 添加文章
 export function addArticle(params) {
   return Request.post(baseUrl + '/add/article', params)
