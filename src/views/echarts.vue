@@ -1,12 +1,65 @@
 <template>
   <div style="text-align: -webkit-center;overflow: auto;height: 100%">
     <div style="height: 50px"></div>
-    <EchartsComponentDef ref="defEchartChildTop" :option="echar.option" :chartsid="echar.chartsid" :width="echar.width"
-                         :height="echar.height"></EchartsComponentDef>
+    <table>
+      <tr>
+        <td>
+          <EchartsComponentDef ref="defEchartChildTop" :option="echar.option" :chartsid="echar.chartsid"
+                               :width="echar.width"
+                               :height="echar.height"></EchartsComponentDef>
+        </td>
+        <td>
+          <el-table
+            :data="tableData"
+            stripe
+            style="width: 100%">
+            <el-table-column
+              prop="name"
+              label="类型"
+              width="180">
+            </el-table-column>
+            <el-table-column
+              prop="value"
+              label="总数"
+              width="180">
+            </el-table-column>
+          </el-table>
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td>
+          <EchartsComponentDef ref="defEchartChild" :option="echar3.option" :chartsid="echar3.chartsid" :width="echar3.width"
+                               :height="echar3.height"></EchartsComponentDef>
+        </td>
+        <td>
+          <el-table
+            :data="tableData1"
+            stripe
+            style="width: 100%">
+            <el-table-column
+              prop="name"
+              label="类型"
+              width="180">
+            </el-table-column>
+            <el-table-column
+              prop="value"
+              label="总数"
+              width="180">
+            </el-table-column>
+          </el-table>
+        </td>
+      </tr>
+    </table>
+
+
     <!--    <EchartsComponentDef :option="echar2.option" :chartsid="echar2.chartsid" :width="echar2.width"-->
     <!--                         :height="echar2.height"></EchartsComponentDef>-->
-    <EchartsComponentDef ref="defEchartChild" :option="echar3.option" :chartsid="echar3.chartsid" :width="echar3.width"
-                         :height="echar3.height"></EchartsComponentDef>
+
+
+
     <!--    <EchartsComponentDef :option="echar1.option" :chartsid="echar1.chartsid" :width="echar1.width"-->
     <!--                         :height="echar1.height"></EchartsComponentDef>-->
     <!--    <EchartsComponentDef :option="echar4.option" :chartsid="echar4.chartsid" :width="echar4.width"-->
@@ -38,6 +91,8 @@
         name: 'demo',
         data() {
             return {
+                tableData: [],
+                tableData1: [],
                 echar: {
                     chartsid: 'chartsid',
                     width: '600px',
@@ -156,7 +211,7 @@
                     width: '600px',
                     height: '400px',
                     option: {
-                        color: ["#4293F4", "#30DFBA", "#FFCF00", "#FF8B19","#FF4B63", "#D1368C"],
+                        color: ["#4293F4", "#30DFBA", "#FFCF00", "#FF8B19", "#FF4B63", "#D1368C"],
                         tooltip: {
                             trigger: 'axis',
                             axisPointer: {
@@ -427,17 +482,19 @@
                     nameList.push(this.questionMap.countName)
                     nameList.push(this.userMap.countName)
                     perList.push({
-                        value:this.questionMap.countList,
-                        name:this.questionMap.countName
-                    },{
-                        value:this.userMap.countList,
-                        name:this.userMap.countName
+                        value: this.questionMap.countList,
+                        name: this.questionMap.countName
+                    }, {
+                        value: this.userMap.countList,
+                        name: this.userMap.countName
                     })
                     this.echar.option.legend.data = nameList
                     this.echar.option.legend = {
                         left: 'center',
                         data: nameList
                     }
+                    this.tableData = perList
+                    this.tableData1 = res.data.categoryTableList
                     this.echar.option.series[0].data = perList
                     this.echar3.option.xAxis = [
                         {

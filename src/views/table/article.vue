@@ -159,17 +159,20 @@
                 this.doSearch()
             },
             doSearch() {
+                console.log("doSearch")
                 let params = {
                     categoryId: this.params.categoryId || '',
                     content: this.content || '',
-                    filterContent: this.filterContent || '',
-                    title: this.title || '',
+                    filterContent: this.params.filterContent || '',
+                    title: this.params.title || '',
                     userId: '',
-                    articleState: this.articleState || '',
+                    articleState: this.params.articleState || '',
                     page: this.currentPage,
                     size: this.pageSize
                 }
+                console.log("params",params)
                 getArticle(params).then((res) => {
+                    console.log("res",res)
                     if (res) {
                         let list = []
                         let dataList = []
