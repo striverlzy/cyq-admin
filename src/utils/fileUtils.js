@@ -2,8 +2,8 @@ let OSS = require('ali-oss');
 
 let client = new OSS({
   endpoint: 'oss-cn-beijing.aliyuncs.com',
-  accessKeyId: 'LTAI4Fcc7eXG3Mf9vTeVDwB7',
-  accessKeySecret: 'wR7ZbF2uuItfLCMKtqYAOEP1HgbW0D',
+  accessKeyId: '',
+  accessKeySecret: '',
   bucket: 'cyq-test'
 });
 
